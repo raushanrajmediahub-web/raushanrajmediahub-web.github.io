@@ -1,0 +1,311 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<meta name="color-scheme" content="light dark" />
+<meta name="description" content="Raushanraj.Mediahub — Fitness influencer marketing by Raushan Raj. Connect your brand with verified fitness creators reaching 67M+ monthly views." />
+<link rel="icon" href="data:," />
+<title>Raushanraj.Mediahub — Fitness Influencer Marketing</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#FAFAF7; --bg2:#F1F0E9; --card:#FFFFFF; --ink:#12140F; --muted:#5B6056; --line:#E3E1D6;
+    --accent:#5A8A00; --accent-ink:#FFFFFF; --accent-soft:#EAF3D1; --dark:#12140F; --dark-text:#F5F5EE; --dark-muted:#B9BDB0;
+    --chip:#EFF0E8;
+  }
+  @media (prefers-color-scheme: dark){
+    :root{
+      --bg:#0E100B; --bg2:#15170F; --card:#1A1D14; --ink:#F2F3EB; --muted:#A8ADA0; --line:#2A2E20;
+      --accent:#BFE84A; --accent-ink:#12140F; --accent-soft:#232B12; --dark:#0A0B08; --dark-text:#F5F5EE; --dark-muted:#B9BDB0;
+      --chip:#22261A;
+    }
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  button,[role="button"]{min-height:44px}
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+  /* Header */
+  header{position:sticky;top:0;z-index:20;background:color-mix(in srgb, var(--bg) 88%, transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 0}
+  .brand{display:flex;align-items:center;gap:11px;text-decoration:none;font-family:"Sora",sans-serif;font-weight:800;letter-spacing:-.02em;font-size:18px;line-height:1}
+  .brand-mark{width:40px;height:40px;border-radius:11px;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-size:15px;flex:none}
+  .brand small{display:block;font-family:"Manrope",sans-serif;font-weight:700;font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+  .nav-links{display:none;gap:28px;font-weight:700;font-size:14px}
+  .nav-links a{text-decoration:none;color:var(--muted)} .nav-links a:hover{color:var(--ink)}
+  .nav-cta{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--bg);text-decoration:none;font-weight:800;font-size:14px;padding:11px 18px;border-radius:999px;min-height:44px;white-space:nowrap;flex:none}
+  @media(max-width:480px){.brand{font-size:15px}.brand-mark{width:34px;height:34px}.nav-cta{font-size:13px;padding:10px 14px}}
+  @media(min-width:760px){.nav-links{display:flex}}
+  /* Hero */
+  .hero{padding:52px 0 8px}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;background:var(--accent-soft);color:var(--accent);font-weight:800;font-size:12px;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:999px}
+  .eyebrow i{width:7px;height:7px;border-radius:50%;background:var(--accent);display:inline-block}
+  h1,h2,h3{font-family:"Sora",sans-serif;letter-spacing:-.03em;line-height:1.05;margin:0}
+  .hero h1{font-size:clamp(38px,6.5vw,64px);font-weight:800;margin:20px 0 18px;max-width:820px}
+  .hero h1 em{font-style:normal;color:var(--accent)}
+  .hero p.lead{font-size:clamp(17px,2.4vw,20px);color:var(--muted);max-width:680px;margin:0 0 28px;font-weight:500}
+  .hero-actions{display:flex;flex-wrap:wrap;gap:12px}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;text-decoration:none;font-weight:800;font-size:15px;padding:14px 22px;border-radius:999px;min-height:50px;border:1px solid transparent;cursor:pointer;font-family:inherit}
+  .btn-primary{background:var(--accent);color:var(--accent-ink)}
+  .btn-ghost{background:transparent;color:var(--ink);border-color:var(--line)}
+  .hero-meta{display:flex;flex-wrap:wrap;gap:10px 22px;margin-top:22px;color:var(--muted);font-size:14px;font-weight:600}
+  .hero-meta span::before{content:"✓";color:var(--accent);font-weight:900;margin-right:7px}
+  /* Stats */
+  .stats{margin:40px 0 8px;background:var(--dark);color:var(--dark-text);border-radius:20px;padding:28px 24px;display:grid;grid-template-columns:1fr 1fr;gap:24px 16px}
+  .stat b{font-family:"Sora",sans-serif;font-size:clamp(26px,4vw,38px);display:block;line-height:1;letter-spacing:-.02em}
+  .stat span{color:var(--dark-muted);font-size:13px;font-weight:600;display:block;margin-top:7px}
+  @media(min-width:760px){.stats{grid-template-columns:repeat(4,1fr);padding:32px}}
+  /* Sections */
+  section{padding:56px 0 8px}
+  .sec-head{max-width:720px;margin-bottom:28px}
+  .sec-head h2{font-size:clamp(28px,4.5vw,40px);font-weight:800}
+  .sec-head p{color:var(--muted);font-size:17px;margin:12px 0 0}
+  .kicker{font-size:12px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:12px}
+  /* Creator cards */
+  .grid{display:grid;gap:16px}
+  @media(min-width:680px){.grid{grid-template-columns:1fr 1fr}}
+  @media(min-width:1020px){.grid.creators{grid-template-columns:repeat(3,1fr)}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px;display:flex;flex-direction:column}
+  .card-top{display:flex;gap:14px;align-items:flex-start}
+  .avatar{width:56px;height:56px;border-radius:16px;display:grid;place-items:center;font-family:"Sora",sans-serif;font-weight:800;font-size:19px;color:#fff;flex:none}
+  .a1{background:#2F5D1E}.a2{background:#8A3B12}.a3{background:#174E5A}.a4{background:#5B2A6E}.a5{background:#8A1F2D}
+  .card h3{font-size:19px}
+  .handle{color:var(--accent);font-weight:800;font-size:14px;text-decoration:none;display:inline-block;margin-top:2px}
+  .handle:hover{text-decoration:underline}
+  .badge{margin-left:auto;background:var(--chip);font-size:11px;font-weight:800;letter-spacing:.04em;padding:5px 9px;border-radius:999px;white-space:nowrap;color:var(--muted)}
+  .card p.desc{color:var(--muted);font-size:14.5px;margin:14px 0 16px}
+  .nums{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin-bottom:16px}
+  .nums div b{font-family:"Sora",sans-serif;font-size:16px;display:block;line-height:1.1}
+  .nums div span{font-size:11px;color:var(--muted);font-weight:700;text-transform:uppercase;letter-spacing:.04em}
+  .tags{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:18px}
+  .tags span{background:var(--chip);font-size:12px;font-weight:700;padding:6px 10px;border-radius:999px}
+  .card .ig{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:800;font-size:14px;text-decoration:none;color:var(--ink);min-height:44px}
+  .card .ig:hover{color:var(--accent)}
+  .note{margin-top:16px;background:var(--bg2);border:1px dashed var(--line);border-radius:14px;padding:16px 18px;color:var(--muted);font-size:14.5px}
+  .note strong{color:var(--ink)}
+  /* Services */
+  .svc{display:grid;gap:14px}
+  @media(min-width:760px){.svc{grid-template-columns:repeat(3,1fr)}}
+  .svc .card{padding:24px}
+  .svc .num{font-family:"Sora",sans-serif;font-size:13px;font-weight:800;color:var(--accent);letter-spacing:.1em}
+  .svc h3{font-size:18px;margin:10px 0 8px}
+  .svc p{color:var(--muted);font-size:14.5px;margin:0}
+  /* Steps */
+  .steps{display:grid;gap:14px}
+  @media(min-width:760px){.steps{grid-template-columns:repeat(3,1fr)}}
+  .step{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:24px}
+  .step .n{width:38px;height:38px;border-radius:50%;background:var(--ink);color:var(--bg);display:grid;place-items:center;font-family:"Sora",sans-serif;font-weight:800;margin-bottom:16px}
+  .step h3{font-size:17px;margin-bottom:8px}.step p{color:var(--muted);font-size:14.5px;margin:0}
+  /* About / Contact */
+  .about{background:var(--dark);color:var(--dark-text);border-radius:22px;padding:32px 24px;display:grid;gap:28px}
+  @media(min-width:860px){.about{grid-template-columns:1.1fr .9fr;padding:40px}}
+  .about h2{font-size:clamp(26px,4vw,34px)}
+  .about p{color:var(--dark-muted);margin:14px 0 0}
+  .person{display:flex;gap:16px;align-items:center;margin-top:22px}
+  .person .avatar{background:var(--accent);color:var(--accent-ink);width:60px;height:60px;font-size:21px}
+  .person b{font-family:"Sora",sans-serif;font-size:18px;display:block}
+  .person span{color:var(--dark-muted);font-size:14px}
+  .contact-list{display:grid;gap:12px;align-content:start}
+  .contact-item{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:16px;text-decoration:none;display:flex;gap:14px;align-items:center;color:var(--dark-text);min-height:64px}
+  @media (prefers-color-scheme: light){.contact-item{background:#1E211A}}
+  .contact-item .ic{width:42px;height:42px;border-radius:11px;background:var(--accent);color:var(--accent-ink);display:grid;place-items:center;font-weight:900;flex:none;font-size:17px}
+  .contact-item small{display:block;color:var(--dark-muted);font-weight:700;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+  .contact-item strong{font-size:15.5px;word-break:break-all}
+  .copy-row{display:flex;gap:10px;flex-wrap:wrap}
+  .copy-btn{background:transparent;border:1px solid rgba(255,255,255,.25);color:var(--dark-text);border-radius:999px;padding:10px 16px;font-weight:800;font-size:13px;cursor:pointer;font-family:inherit}
+  footer{padding:40px 0 48px;color:var(--muted);font-size:14px}
+  .foot{display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;border-top:1px solid var(--line);padding-top:22px}
+  .foot a{font-weight:700;text-decoration:none}.foot a:hover{color:var(--accent)}
+  .toast{position:fixed;left:50%;bottom:22px;transform:translate(-50%,80px);background:var(--ink);color:var(--bg);padding:12px 20px;border-radius:999px;font-weight:800;font-size:14px;transition:transform .25s;z-index:50;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+  .toast.show{transform:translate(-50%,0)}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav">
+    <a class="brand" href="#top"><span class="brand-mark">R.</span><span>Raushanraj.Mediahub<small>Influencer Marketing</small></span></a>
+    <nav class="nav-links"><a href="#creators">Creators</a><a href="#services">Services</a><a href="#process">How It Works</a><a href="#contact">Contact</a></nav>
+    <a class="nav-cta" href="#contact">Work With Us →</a>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <!-- HERO -->
+  <div class="hero">
+    <span class="eyebrow"><i></i> Fitness Influencer Marketing • India</span>
+    <h1>Your brand, in front of <em>67M+ fitness viewers</em> every month.</h1>
+    <p class="lead">Raushanraj.Mediahub connects fitness, nutrition and wellness brands with a hand-picked roster of creators who actually move product — real audiences, real engagement, one point of contact.</p>
+    <div class="hero-actions">
+      <a class="btn btn-primary" href="#creators">Meet the Creators</a>
+      <a class="btn btn-ghost" href="#contact">Get Rates &amp; Media Kits</a>
+    </div>
+    <div class="hero-meta"><span>Verified creator insights</span><span>Single point of contact</span><span>Campaigns managed end-to-end</span></div>
+
+    <div class="stats">
+      <div class="stat"><b>67M+</b><span>Combined views · last 30 days</span></div>
+      <div class="stat"><b>934K+</b><span>Combined followers (top 3 creators)</span></div>
+      <div class="stat"><b>5</b><span>Fitness creators in active talks</span></div>
+      <div class="stat"><b>100%</b><span>Fitness &amp; workout niche only</span></div>
+    </div>
+  </div>
+
+  <!-- CREATORS -->
+  <section id="creators">
+    <div class="sec-head">
+      <div class="kicker">Our Creator Roster</div>
+      <h2>Creators brands can book through us</h2>
+      <p>Every creator below is in direct contact with us. Tap any profile to view their Instagram. For rates, availability and full media kits, contact us — we respond personally.</p>
+    </div>
+
+    <div class="grid creators">
+      <!-- Hasan -->
+      <article class="card">
+        <div class="card-top">
+          <div class="avatar a1">HM</div>
+          <div><h3>Hasan Mehdi</h3><a class="handle" href="https://www.instagram.com/m.syedhasan/" target="_blank" rel="noopener">@m.syedhasan ↗</a></div>
+          <span class="badge">TOP REACH</span>
+        </div>
+        <p class="desc">One of the fastest-growing fitness voices in our roster. His transformation and training reels consistently reach millions.</p>
+        <div class="nums"><div><b>407K</b><span>Followers</span></div><div><b>36.1M</b><span>Views / 30d</span></div><div><b>7.3M</b><span>Top reel</span></div></div>
+        <div class="tags"><span>Fitness</span><span>Transformation</span><span>Training Reels</span></div>
+        <a class="ig" href="https://www.instagram.com/m.syedhasan/" target="_blank" rel="noopener">View Instagram Profile →</a>
+      </article>
+
+      <!-- Sonu -->
+      <article class="card">
+        <div class="card-top">
+          <div class="avatar a2">SD</div>
+          <div><h3>Sonu Dumane</h3><a class="handle" href="https://www.instagram.com/sonu.dumane.129/" target="_blank" rel="noopener">@sonu.dumane.129 ↗</a></div>
+          <span class="badge">VIRAL REELS</span>
+        </div>
+        <p class="desc">Gym motivation creator on the road to 1M. Known for high-retention workout reels with multiple viral hits above 10M views.</p>
+        <div class="nums"><div><b>307K</b><span>Followers</span></div><div><b>13.7M</b><span>Views / 30d</span></div><div><b>32.1M</b><span>Top reel</span></div></div>
+        <div class="tags"><span>Gym Motivation</span><span>Workout</span><span>Reels</span></div>
+        <a class="ig" href="https://www.instagram.com/sonu.dumane.129/" target="_blank" rel="noopener">View Instagram Profile →</a>
+      </article>
+
+      <!-- Hannah -->
+      <article class="card">
+        <div class="card-top">
+          <div class="avatar a3">HS</div>
+          <div><h3>Hannah Sim</h3><a class="handle" href="https://www.instagram.com/hay_nah_fit/" target="_blank" rel="noopener">@hay_nah_fit ↗</a></div>
+          <span class="badge">✓ VERIFIED</span>
+        </div>
+        <p class="desc">Certified fitness coach — ACSM CPT, Les Mills &amp; CrossFit. Premium, brand-safe content with a 99% India audience.</p>
+        <div class="nums"><div><b>220K</b><span>Followers</span></div><div><b>17M+</b><span>Views / 30d</span></div><div><b>99%</b><span>India audience</span></div></div>
+        <div class="tags"><span>Fitness Coach</span><span>Women's Fitness</span><span>Brand-Safe</span></div>
+        <a class="ig" href="https://www.instagram.com/hay_nah_fit/" target="_blank" rel="noopener">View Instagram Profile →</a>
+      </article>
+
+      <!-- Priyanshu -->
+      <article class="card">
+        <div class="card-top">
+          <div class="avatar a4">PD</div>
+          <div><h3>Priyanshu Dixit</h3><a class="handle" href="https://www.instagram.com/priyanshu_7_8_6/" target="_blank" rel="noopener">@priyanshu_7_8_6 ↗</a></div>
+        </div>
+        <p class="desc">Fitness creator with consistently strong reel performance — ideal for product integrations and dedicated brand videos.</p>
+        <div class="nums"><div><b>400–500K</b><span>Avg. views / reel</span></div><div><b>Reels</b><span>Primary format</span></div><div><b>India</b><span>Audience</span></div></div>
+        <div class="tags"><span>Fitness</span><span>Integrations</span><span>Dedicated Videos</span></div>
+        <a class="ig" href="https://www.instagram.com/priyanshu_7_8_6/" target="_blank" rel="noopener">View Instagram Profile →</a>
+      </article>
+
+      <!-- Rajiv -->
+      <article class="card">
+        <div class="card-top">
+          <div class="avatar a5">RJ</div>
+          <div><h3>Rajiv</h3><a class="handle" href="https://www.instagram.com/rjv_fitness786/" target="_blank" rel="noopener">@rjv_fitness786 ↗</a></div>
+        </div>
+        <p class="desc">Consistent fitness creator with loyal, repeat viewership. A strong fit for long-term brand partnerships and monthly campaigns.</p>
+        <div class="nums"><div><b>78K</b><span>Avg. views (last 8 videos)</span></div><div><b>Long-term</b><span>Deals available</span></div><div><b>India</b><span>Audience</span></div></div>
+        <div class="tags"><span>Fitness</span><span>Workout</span><span>Long-Term Deals</span></div>
+        <a class="ig" href="https://www.instagram.com/rjv_fitness786/" target="_blank" rel="noopener">View Instagram Profile →</a>
+      </article>
+
+      <!-- CTA card -->
+      <article class="card" style="background:var(--accent-soft);border-color:transparent;justify-content:center">
+        <h3 style="font-size:22px;margin-bottom:10px">Want the full media kits?</h3>
+        <p class="desc" style="margin-top:0">Get detailed audience insights, past performance and rates for any creator — sent personally by Raushan.</p>
+        <a class="btn btn-primary" href="#contact" style="align-self:flex-start">Request Media Kit</a>
+      </article>
+    </div>
+
+    <div class="note"><strong>For creators:</strong> If you create fitness or workout content and want brand deals managed for you, DM us on Instagram at <a href="https://www.instagram.com/raushan.mediahub/" target="_blank" rel="noopener" style="font-weight:800;color:var(--accent)">@raushan.mediahub</a> — we are expanding the roster.</div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="sec-head">
+      <div class="kicker">What We Do</div>
+      <h2>Everything a brand needs, handled for you</h2>
+      <p>You brief us once. We handle creator selection, negotiation, content coordination and delivery.</p>
+    </div>
+    <div class="svc">
+      <div class="card"><div class="num">01</div><h3>Instagram Reels</h3><p>High-reach short-form videos — dedicated reels and natural product integrations inside a creator's regular content.</p></div>
+      <div class="card"><div class="num">02</div><h3>Stories &amp; Posts</h3><p>Swipe-up stories, static posts and story + reel combos for launches, offers and time-bound campaigns.</p></div>
+      <div class="card"><div class="num">03</div><h3>Dedicated Videos</h3><p>Full videos built around your product — reviews, routines and challenges with your brand at the centre.</p></div>
+      <div class="card"><div class="num">04</div><h3>Long-Term Partnerships</h3><p>Monthly creator partnerships for brands that want consistent visibility instead of one-off posts.</p></div>
+      <div class="card"><div class="num">05</div><h3>Campaign Management</h3><p>Briefing, timelines, content approval and posting — coordinated end-to-end so your team does not chase creators.</p></div>
+      <div class="card"><div class="num">06</div><h3>Creator Matching</h3><p>We match your product to the right audience — supplements, equipment, activewear, nutrition or wellness.</p></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section id="process">
+    <div class="sec-head">
+      <div class="kicker">How It Works</div>
+      <h2>From brief to live post in three steps</h2>
+    </div>
+    <div class="steps">
+      <div class="step"><div class="n">1</div><h3>Share your brief</h3><p>Message us on Instagram, email or phone with your product, goal and budget range. We reply personally.</p></div>
+      <div class="step"><div class="n">2</div><h3>Pick your creators</h3><p>We send media kits and rates for the creators who fit your brand, and finalise content and timelines together.</p></div>
+      <div class="step"><div class="n">3</div><h3>Content goes live</h3><p>Creators publish on schedule. You get the live links and performance updates — no follow-ups needed from your side.</p></div>
+    </div>
+  </section>
+
+  <!-- ABOUT + CONTACT -->
+  <section id="contact">
+    <div class="about">
+      <div>
+        <div class="kicker" style="color:var(--accent)">About &amp; Contact</div>
+        <h2>Run personally by Raushan Raj</h2>
+        <p>Raushanraj.Mediahub is a fitness-only influencer marketing practice. No middlemen layers, no inflated decks — you talk directly to the person who talks to the creators, every single time.</p>
+        <p>Currently working with fitness, nutrition and wellness brands across India.</p>
+        <div class="person"><div class="avatar">RR</div><div><b>Raushan Raj</b><span>Founder — Raushanraj.Mediahub</span></div></div>
+        <div class="copy-row" style="margin-top:22px">
+          <button class="copy-btn" onclick="copyText('raushanraj.mediahub@gmail.com','Email copied')">Copy Email</button>
+          <button class="copy-btn" onclick="copyText('+917654909879','Phone number copied')">Copy Phone</button>
+        </div>
+      </div>
+      <div class="contact-list">
+        <a class="contact-item" href="https://www.instagram.com/raushan.mediahub/" target="_blank" rel="noopener"><span class="ic">◎</span><span><small>Instagram — Fastest Reply</small><strong>@raushan.mediahub</strong></span></a>
+        <a class="contact-item" href="mailto:raushanraj.mediahub@gmail.com?subject=Brand%20Collaboration%20Enquiry%20—%20Raushanraj.Mediahub"><span class="ic">✉</span><span><small>Email</small><strong>raushanraj.mediahub@gmail.com</strong></span></a>
+        <a class="contact-item" href="tel:+917654909879"><span class="ic">☎</span><span><small>Call / WhatsApp</small><strong>+91 76549 09879</strong></span></a>
+        <a class="contact-item" href="https://wa.me/917654909879?text=Hi%20Raushan%2C%20I%20am%20interested%20in%20a%20creator%20collaboration." target="_blank" rel="noopener"><span class="ic">↗</span><span><small>Start a Chat</small><strong>Message on WhatsApp →</strong></span></a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot">
+      <span>© 2026 <strong>Raushanraj.Mediahub</strong> · Raushan Raj · Fitness Influencer Marketing, India</span>
+      <span><a href="https://www.instagram.com/raushan.mediahub/" target="_blank" rel="noopener">Instagram</a> &nbsp;·&nbsp; <a href="mailto:raushanraj.mediahub@gmail.com">Email</a> &nbsp;·&nbsp; <a href="tel:+917654909879">+91 76549 09879</a></span>
+    </div>
+    <p style="margin:14px 0 0;font-size:13px">Creator statistics shown are from creators' own Instagram insights (last 30 days, November 2026) and update as new insights are shared.</p>
+  </footer>
+</main>
+
+<div class="toast" id="toast">Copied</div>
+<script>
+function copyText(text, msg){
+  var done=function(){ var t=document.getElementById('toast'); t.textContent=msg; t.classList.add('show'); setTimeout(function(){t.classList.remove('show')},2200); };
+  if(navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(text).then(done).catch(function(){ fallback(); }); } else { fallback(); }
+  function fallback(){ var ta=document.createElement('textarea'); ta.value=text; document.body.appendChild(ta); ta.select(); try{document.execCommand('copy'); done();}catch(e){} document.body.removeChild(ta); }
+}
+</script>
+</body>
+</html>
